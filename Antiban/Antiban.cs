@@ -84,6 +84,12 @@ public class Antiban
         return intermediateResult;
     }
 
+    /// <summary>
+    /// Установка минимального интервала времени
+    /// </summary>
+    /// <param name="antibanResults">Входящий массив данных</param>
+    /// <param name="minInterval">Минимальный интервал</param>
+    /// <returns>Были ли внесены изменения</returns>
     private static bool SetMinumumSendTimeInterval(List<AntibanResult> antibanResults, TimeSpan minInterval)
     {
         var isChangesWasMade = false;
@@ -104,6 +110,12 @@ public class Antiban
         return isChangesWasMade;
     }
 
+    /// <summary>
+    /// Получение данных по типу приоритета
+    /// </summary>
+    /// <param name="group">Входящий массив данных</param>
+    /// <param name="targetPriority">Тип приоритета сообщания</param>
+    /// <returns>Данные по заданному типу приоритета</returns>
     private static List<AntibanResult> GetResultsListByPriority(IGrouping<string, EventMessage> group, int targetPriority)
     {
         return group
